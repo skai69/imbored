@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello Ma Nigha</title>
+  <style>
+    body {
+      background-color: pink;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: darkgreen;
+      text-align: center;
+      padding: 50px;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: 2px solid darkgreen;
+      color: darkgreen;
+      border-radius: 5px;
+      margin: 10px;
+      background-color: #fff; /* Button background color */
+      transition: background-color 0.3s ease; /* Smooth transition on hover */
+    }
+
+    .button:hover {
+      background-color: rgba(0, 128, 0, 0.1); /* Light green on hover */
+      color: white;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Hello Ma Nigha, are you free this Sunday?</h1>
+    <a href="#" class="button" onclick="showMessage('yes1')">Yes</a>
+    <a href="#" class="button" onclick="showMessage('no1')">No</a>
+  </div>
+
+  <div id="messageYes1" class="message" style="display: none;">
+    Nalle aadmi, do you wanna go picnic?
+    <a href="#" class="button" onclick="showMessage('yes2')">Yes</a>
+    <a href="#" class="button" onclick="showMessage('no2')">No</a>
+  </div>
+
+  <div id="messageNo1" class="message" style="display: none;">
+    Boohoo, go kys.
+  </div>
+
+  <div id="messageYes2" class="message" style="display: none;">
+    Lodhi Garden or Sunder Nursery?
+    <a href="#" class="button" onclick="showMessage('lodhi')">Lodhi Garden</a>
+    <a href="#" class="button" onclick="showMessage('sunder')">Sunder Nursery</a>
+  </div>
+
+  <div id="messageNo2" class="message" style="display: none;">
+    I hate u, go kys.
+  </div>
+
+  <div id="messageLodhi" class="message" style="display: none;">
+    Ok, send DM for more deets - Lodhi Garden.
+  </div>
+
+  <div id="messageSunder" class="message" style="display: none;">
+    Ok, send DM for more deets - Sunder Nursery.
+  </div>
+
+  <script>
+    function showMessage(choice) {
+      document.getElementById('messageYes1').style.display = 'none';
+      document.getElementById('messageNo1').style.display = 'none';
+      document.getElementById('messageYes2').style.display = 'none';
+      document.getElementById('messageNo2').style.display = 'none';
+      document.getElementById('messageLodhi').style.display = 'none';
+      document.getElementById('messageSunder').style.display = 'none';
+
+      if (choice === 'yes1') {
+        document.getElementById('messageYes1').style.display = 'block';
+      } else if (choice === 'no1') {
+        document.getElementById('messageNo1').style.display = 'block';
+      } else if (choice === 'yes2') {
+        document.getElementById('messageYes2').style.display = 'block';
+      } else if (choice === 'no2') {
+        document.getElementById('messageNo2').style.display = 'block';
+      } else if (choice === 'lodhi') {
+        document.getElementById('messageLodhi').style.display = 'block';
+      } else if (choice === 'sunder') {
+        document.getElementById('messageSunder').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
